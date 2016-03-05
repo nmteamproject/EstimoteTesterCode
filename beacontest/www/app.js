@@ -213,7 +213,7 @@ var app = (function () {
         } else if (mNearestBeacon.major == 18015) {
             var tester = $('<p style="background:#0000ff"><strong>Watch the Beatles play Live!</strong></p><a href="page2.html">Click Here</a>');
         } else if (mNearestBeacon.major == 50017) {
-            var tester = $('<p style="background:#0000ff"><strong>Find out about the creator of this app!</strong></p><a href="page2.html">Click Here</a>');
+            var tester = $('<p style="background:#00ffff"><strong>Find out about the creator of this app!</strong></p><a href="page3.html">Click Here</a>');
         } else {
             var tester = $('<p style="background:#ff0000"><strong>Get in Range of a beacon yo!</strong></p>');
         }

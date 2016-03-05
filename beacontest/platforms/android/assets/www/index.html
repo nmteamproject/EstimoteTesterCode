@@ -16,6 +16,7 @@
 	<script>
 	// Redirect console.log to Evothings Workbench.
 	if (window.hyper && window.hyper.log) { console.log = hyper.log }
+        
 	</script>
 
 	<script src="cordova.js"></script>
@@ -32,19 +33,13 @@
 			<img src="ui/images/arrow-left.svg" />
 		</button>
 
-		<img class="logotype" src="ui/images/logo.svg" alt="Evothings" />
+		Plectra
 
-		<!--<button class="menu" onclick=""><img src="ui/images/menu.svg" /></button>-->
 	</header>
 
-	<h1>Cordova iBeacon</h1>
+    <ul id="test" class="dynamic">Welcome to Plectra! the wayfinding Rock Hall App.</ul>
 
-	<p>This app displays the nearest ranged beacon and monitors region enter/exit events. Before the app will work you need to add your beacons by editing the variables mRegions and mRegionData in file app.js.</p>
-
-	<ul id="beacon" class="dynamic"></ul>
-
-	<ul id="events" class="dynamic"></ul>
-
+    
 </body>
 
 </html>

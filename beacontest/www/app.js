@@ -209,11 +209,13 @@ var app = (function () {
         $('#test').empty();
 
         if (mNearestBeacon.major == 19175) {
-            var tester = $('<p style="background:#00ff00">The current closest beacon is the estimote beacon</p><a href="page1.html">Click Here</a>');
-        } else if (mNearestBeacon.major == 152) {
-            var tester = $('<p style="background:#0000ff">The current closest beacon is the iPhone beacon</p><a href="page2.html">Click Here</a>');
+            var tester = $('<p style="background:#00ff00"><strong>Play a Trivia Game!</strong></p><a href="page1.html">Click Here</a>');
+        } else if (mNearestBeacon.major == 18015) {
+            var tester = $('<p style="background:#0000ff"><strong>Watch the Beatles play Live!</strong></p><a href="page2.html">Click Here</a>');
+        } else if (mNearestBeacon.major == 50017) {
+            var tester = $('<p style="background:#0000ff"><strong>Find out about the creator of this app!</strong></p><a href="page2.html">Click Here</a>');
         } else {
-            var tester = $('<p style="background:#ff0000">There is no close beacon!</p>');
+            var tester = $('<p style="background:#ff0000"><strong>Get in Range of a beacon yo!</strong></p>');
         }
 
         $('#test').append(tester);

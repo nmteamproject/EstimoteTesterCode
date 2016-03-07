@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background:#c6e2ff">
+<html style="background:#000080">
 
 <head>
 
@@ -27,7 +27,7 @@
 
 </head>
 
-<body style="background:#c6e2ff">
+<body style="background:#000080">
 
     <header>
         <button class="back" onclick="history.back()">
@@ -37,13 +37,13 @@
         Estimote
 
     </header>
-
-    <button id="cameraButton" onclick="getPicture()">picture</button>
-    <img src="" id="myImage" width="100%">
-
+    <center>
+        <button id="cameraButton" onclick="getPicture()">picture</button>
+        <img src="" id="myImage" width="100%">
+    </center>
     <script type="text/javascript">
         document.addEventListener('deviceready', function () {
-            
+
         }, false);
 
         function getPicture() {

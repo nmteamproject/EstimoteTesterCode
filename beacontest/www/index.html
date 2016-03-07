@@ -7,17 +7,13 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no
 		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-	<title>Cordova iBeacon</title>
+	<title>Plectra</title>
 
 	<style>
 		@import 'ui/css/evothings-app.css';
+        @import 'ui/css/animate.css';
+        @import 'ui/css/style.css';
 	</style>
-
-	<script>
-	// Redirect console.log to Evothings Workbench.
-	if (window.hyper && window.hyper.log) { console.log = hyper.log }
-        
-	</script>
 
 	<script src="cordova.js"></script>
 	<script src="libs/jquery/jquery.js"></script>
@@ -33,11 +29,15 @@
 			<img src="ui/images/arrow-left.svg" />
 		</button>
 
-		Plectra
+		<div>Plectra</div>
 
 	</header>
 
-    <ul id="test" class="dynamic">Welcome to Plectra! the wayfinding Rock Hall App.</ul>
+    <ul id="homeScreen" class="dynamic"><div style="margin: 0 0.9em 0 0.9em">Welcome to Plectra! the wayfinding Rock Hall App.</div></ul>
+    
+    
+    
+    <ul id="test" class="dynamic"></ul>
 
     
 </body>

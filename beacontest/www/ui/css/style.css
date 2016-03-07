@@ -1,0 +1,15 @@
+.gameNotification {
+    background: #ff78f3;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    height: 10%;
+    font-size: 4vh;
+}
+
+.gameText {
+    position: relative;
+    top: 25%;
+}

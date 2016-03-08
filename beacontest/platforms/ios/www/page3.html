@@ -39,7 +39,10 @@
 
     </header>
     <center>
-        <button onclick="downOverlay()">&#8592;</button><button id="cameraButton" onclick="getPicture()">Take Picture</button><button onclick="upOverlay()">&#8594;</button>
+        <button onclick="downOverlay()">&#8592;</button> <button id="cameraButton" onclick="getPicture()">Take Picture</button> <button onclick="upOverlay()">&#8594;</button>
+        <div class="photoButton">
+        <button onclick="smallerImage()">-</button>&nbsp;&nbsp;&nbsp;<button onclick="largerImage()">+</button>
+            </div>
         <img src="" id="myImage"  width="100%" />
         <img src="images/makeupoverlay1.png" id="myOverlay" width="100%">
 
@@ -48,6 +51,7 @@
     </center>
     <script type="text/javascript">
         var overlayNumber = 1;
+        var padLeft = 0;
         document.addEventListener('deviceready', function () {
 
         }, false);
@@ -65,6 +69,7 @@
                     destinationType: Camera.DestinationType.FILE_URI,
                     saveToPhotoAlbum: true
                 });
+             document.getElementById("cameraButton").innerHTML = "Retake";
         }
 
         function editPicture() {
@@ -73,7 +78,7 @@
         }
         
         function upOverlay(){
-            if(overlayNumber == 4){
+            if(overlayNumber == 5){
                 overlayNumber = 1;
             }else{
             overlayNumber++;
@@ -82,12 +87,25 @@
         }
         function downOverlay(){
             if(overlayNumber == 1){
-                overlayNumber = 4;
+                overlayNumber = 5;
             }else{
             overlayNumber--;
             }
             myOverlay.src = "images/makeupoverlay"+overlayNumber+".png"
         }
+        function smallerImage(){
+            document.getElementById("myOverlay").width = document.getElementById("myOverlay").width - 10;
+            padLeft = padLeft + 5;
+            document.getElementById("myOverlay").style.marginLeft = padLeft+"px";
+          //  document.getElementById("myOverlay").style.marginTop = padLeft+"px";
+        }
+        function largerImage(){
+            document.getElementById("myOverlay").width = document.getElementById("myOverlay").width + 10;
+            padLeft = padLeft - 5;
+            document.getElementById("myOverlay").style.marginLeft = padLeft+"px";
+           // document.getElementById("myOverlay").style.marginTop = padLeft+"px";
+        }
+        
     </script>
 
 </body>

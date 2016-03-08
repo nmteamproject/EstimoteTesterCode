@@ -11,6 +11,7 @@
 
     <style>
         @import 'ui/css/evothings-app.css';
+         @import 'ui/css/style.css';
     </style>
 
     <script>
@@ -34,14 +35,19 @@
             <img src="ui/images/arrow-left.svg" />
         </button>
 
-        Estimote
+        Join Kiss!
 
     </header>
     <center>
-        <button id="cameraButton" onclick="getPicture()">picture</button>
-        <img src="" id="myImage" width="100%">
+        <button onclick="downOverlay()">&#8592;</button><button id="cameraButton" onclick="getPicture()">Take Picture</button><button onclick="upOverlay()">&#8594;</button>
+        <img src="" id="myImage"  width="100%" />
+        <img src="images/makeupoverlay1.png" id="myOverlay" width="100%">
+
+        
+
     </center>
     <script type="text/javascript">
+        var overlayNumber = 1;
         document.addEventListener('deviceready', function () {
 
         }, false);
@@ -56,8 +62,31 @@
                     alert('Failed becuase:' + message);
                 }, {
                     quality: 50,
-                    destinationType: Camera.DestinationType.FILE_URI
+                    destinationType: Camera.DestinationType.FILE_URI,
+                    saveToPhotoAlbum: true
                 });
+        }
+
+        function editPicture() {
+            var image = document.getElementById('myImage');
+            image.src = "images/face.jpg";
+        }
+        
+        function upOverlay(){
+            if(overlayNumber == 4){
+                overlayNumber = 1;
+            }else{
+            overlayNumber++;
+            }
+            myOverlay.src = "images/makeupoverlay"+overlayNumber+".png"
+        }
+        function downOverlay(){
+            if(overlayNumber == 1){
+                overlayNumber = 4;
+            }else{
+            overlayNumber--;
+            }
+            myOverlay.src = "images/makeupoverlay"+overlayNumber+".png"
         }
     </script>
 

@@ -13,3 +13,24 @@
     position: relative;
     top: 25%;
 }
+
+#myOverlay{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top:250px;
+}
+
+#myImage{
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top:200px;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: "FlipH";
+    filter: FlipH;
+}

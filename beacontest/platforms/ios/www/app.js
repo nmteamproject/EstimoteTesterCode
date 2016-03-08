@@ -216,7 +216,7 @@ var app = (function () {
                 var tester = $('<a href="page2.html"><p style="background:#ffff00" class="gameNotification animated slideInUp"><strong class = "gameText">Watch the Beatles Play Live!</strong></p></a>');
                 var hScreen= $('<img src="images/ice.jpg" width="100%">');
             } else if (mNearestBeacon.major == 50017) {
-                var tester = $('<a href="page3.html"><p style="background:#00ffff" class="gameNotification animated slideInUp"><strong class = "gameText">Take a Photo!</strong></p></a>');
+                var tester = $('<a href="page3.html"><p style="background:#00ffff" class="gameNotification animated slideInUp"><strong class = "gameText">Take a photo as Kiss!</strong></p></a>');
                 var hScreen= $('<img src="images/blueberry.jpg" width="100%">');
             } else {
                 var tester = $(' ');

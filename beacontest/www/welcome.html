@@ -3,35 +3,33 @@
 
 <head>
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, user-scalable=no
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no
 		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-	<title>Plectra</title>
+    <title>Plectra</title>
 
-	<style>
-		@import 'ui/css/evothings-app.css';
+    <style>
+        @import 'ui/css/evothings-app.css';
         @import 'ui/css/animate.css';
         @import 'ui/css/style.css';
-	</style>
+    </style>
 
-	<script src="cordova.js"></script>
-	<script src="libs/jquery/jquery.js"></script>
-	<script src="libs/evothings/evothings.js"></script>
+    <script src="cordova.js"></script>
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/evothings/evothings.js"></script>
 
-	<script src="app.js"></script>
-    
+    <script src="app.js"></script>
+
     <script type="text/javascript">
-        
-        function takeSurvey(){
+        function takeSurvey() {
             window.location.href = "survey.html";
         }
-        
-        function skip(){
+
+        function skip() {
             window.location.href = "beacons.html";
-           
+
         }
-        
     </script>
 
 
@@ -39,31 +37,32 @@
 
 <body>
 
-	<header>
-		<button class="back" onclick="history.back()">
-			<img src="ui/images/arrow-left.svg" />
-		</button>
+    <header>
+        <button class="back" onclick="history.back()">
+            <img src="ui/images/arrow-left.svg" />
+        </button>
 
-		<div>Plectra</div>
+        <div>Plectra</div>
 
-	</header>
+    </header>
 
+    <br>
+    <p class="lead" id="login">Welcome User!</p>
+    <div style="text-align: center;">
+        <img src="images/user.png" width="12%">
         <br>
-        <p class="lead" id="login">Welcome User!</p>
-        <div style="text-align: center;">
-            <img src="images/user.png" width="12%">
-            <br>
-            <br>
-            <Br>
-            <p class="lead">First time user:</p>
-            <button id="survey" style="margin-top:15px" onclick="takeSurvey()">Take survey!</button>
-            <br>
-            <button id="skip" style="margin-top:15px" onclick="skip()">Skip :(</button>
-        </div>
-    </div></ul>
+        <br>
+        <br>
+        <p class="lead">First time user:</p>
+        <button id="survey" style="margin-top:15px" onclick="takeSurvey()">Take survey!</button>
+        <br>
+        <button id="skip" style="margin-top:15px" onclick="skip()">Skip :(</button>
+    </div>
+    </div>
+    </ul>
 
 
-        
+
 </body>
 
 </html>

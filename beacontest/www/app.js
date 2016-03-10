@@ -26,9 +26,8 @@ var app = (function () {
         'CLRegionStateOutside': 'Exit'
     };
 
-    // Here monitored regions are defined.
-    // TODO: Update with uuid/major/minor for your beacons.
-    // You can add as many beacons as you want to use.
+    //Looks for beacons that have the following properties.
+    //In order for a beacon to be detected, it has to be put into the following list
     var mRegions = [
         {
             id: 'region1',
@@ -63,10 +62,7 @@ var app = (function () {
 
 	];
 
-    // Region data is defined here. Mapping used is from
-    // region id to a string. You can adapt this to your
-    // own needs, and add other data to be displayed.
-    // TODO: Update with major/minor for your own beacons.
+    //Name of the beacons in range.
     var mRegionData = {
         'region1': 'iPhone iBeacon',
         'region2': 'iPhone iBeacon',
@@ -206,18 +202,21 @@ var app = (function () {
         if (!mNearestBeacon) {
             return;
         }
+
+        // If the nearest beacon changes, the code on beacons.html will change to the following based on beacon.major
+
         if (mNearestBeacon.major != previousBeacon) {
             $('#test').empty();
             $('#homeScreen').empty();
             if (mNearestBeacon.major == 19175) {
                 var tester = $('<a href="page1.html"><p style="background:#00ff00" class="gameNotification animated slideInUp"><strong class = "gameText">Play a Trivia Game!</strong></p></a>');
-                var hScreen= $('<img src="images/mint.jpg" width="100%">');
+                var hScreen = $('<img src="images/mint.jpg" width="100%">');
             } else if (mNearestBeacon.major == 18015) {
                 var tester = $('<a href="page2.html"><p style="background:#ffff00" class="gameNotification animated slideInUp"><strong class = "gameText">Watch the Beatles Play Live!</strong></p></a>');
-                var hScreen= $('<img src="images/ice.jpg" width="100%">');
+                var hScreen = $('<img src="images/ice.jpg" width="100%">');
             } else if (mNearestBeacon.major == 50017) {
                 var tester = $('<a href="page3.html"><p style="background:#00ffff" class="gameNotification animated slideInUp"><strong class = "gameText">Take a photo as Kiss!</strong></p></a>');
-                var hScreen= $('<img src="images/blueberry.jpg" width="100%">');
+                var hScreen = $('<img src="images/blueberry.jpg" width="100%">');
             } else {
                 var tester = $(' ');
             }
@@ -249,24 +248,13 @@ var app = (function () {
     }
 
     function displayRegionEvents() {
-        // Clear list.
-        //$('#events').empty();
-        // Update list.
-        for (var i = mRegionEvents.length - 1; i >= 0; --i) {
-            var event = mRegionEvents[i];
-            var title = getEventDisplayString(event);
-            var element = $(
-                '<li>' + '<strong>' + title + '</strong>' + '</li>'
-            );
-            //$('#events').append(element);
-        }
-
-        // If the list is empty display a help text.
+        // Displayed before it connects to beacons or while there is no beacon in range.
+        //uncomment bottom line if we need to change the home screen.
         if (mRegionEvents.length <= 0) {
             var element = $(
                 '<li>' + '<strong>' + 'Waiting for region events, please move into or out of a beacon region.' + '</strong>' + '</li>'
             );
-            //$('#events').append(element);
+            //$('#homeScreen').append(element);
         }
     }
 

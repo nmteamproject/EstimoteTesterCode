@@ -339,14 +339,22 @@
         // Quiz result options in a separate object for flexibility
         var resultOptions = [
             {   title: 'Rocker Route',
-                desc: '<p>You are a hardcore rocker at heart and love classic rock and roll!</p>'},
+                desc: '<p>You are a hardcore rocker at heart and love classic rock and roll!</p>' +
+                '<button id=\"skip\" style=\"margin-top:15px\" onclick=\"skip()\">Finish</button>'},
             {   title: 'Pop Route',
-                desc: '<p>You love all popular music and like to stay contemporary!</p>'},
+                desc: '<p>You love all popular music and like to stay contemporary!</p>' +
+                '<button id=\"skip\" style=\"margin-top:15px\" onclick=\"skip()\">Finish</button>'},
             {   title: 'Country Route',
-                desc: '<p>You like to sit back and listen to the soothing twang of country music!</p>'},
+                desc: '<p>You like to sit back and listen to the soothing twang of country music!</p>' +
+                '<button id=\"skip\" style=\"margin-top:15px\" onclick=\"skip()\">Finish</button>'},
             {   title: 'Alternative Route',
-                desc: '<p>Ypu like to stray away from the norm and listen to something a little out of the box!</p>'}
+                desc: '<p>Ypu like to stray away from the norm and listen to something a little out of the box!</p>' +
+                '<button id=\"skip\" style=\"margin-top:15px\" onclick=\"skip()\">Finish</button>'}
         ];
+        
+        function skip(){
+            window.location.href = "beacons.html";
+        }
 
         // global variables
         var quizSteps = $('#quizzie .quiz-step'),

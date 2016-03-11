@@ -21,7 +21,7 @@ html, body {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 body {
-	margin: 0 0.9em 0 0.9em;
+/*	margin: 0 0.9em 0 0.9em;*/
 	font-size: 150%;
 	font-size: 7.5vw;
 }
@@ -251,7 +251,7 @@ input {
 	font-size: 63%;
 }
 
-input[type="text"],input[type="url"] {
+input[type="text"],input[type="url"],input[type="password"] {
 	width: 50%;
 
 	padding: 7px 14px 7px 14px;

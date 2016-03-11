@@ -18,13 +18,15 @@
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
     <allow-intent href="market:*" />
-    <name>HelloCordova</name>
+    <name>Rock This Way</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+        RIT New Media Team Project
     </author>
+    <icon density="mdpi" height="57" platform="ios" src="res/icon.png" width="57" />
+    <icon density="mdpi" height="57" platform="android" src="res/icon.png" width="57" />
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

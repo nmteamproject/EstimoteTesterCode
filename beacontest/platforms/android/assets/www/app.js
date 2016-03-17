@@ -1,5 +1,4 @@
 var app = (function () {
-    $('#appbody').innerHTML = "hey there";
     // Application object.
     var app = {};
 
@@ -17,6 +16,8 @@ var app = (function () {
 
     // Background notification id counter.
     var mNotificationId = 0;
+
+    var previousBeacon;
 
     // Mapping of region event state names.
     // These are used in the event display string.
@@ -205,21 +206,26 @@ var app = (function () {
         if (!mNearestBeacon) {
             return;
         }
+        if (mNearestBeacon.major != previousBeacon) {
+            $('#test').empty();
+            $('#homeScreen').empty();
+            if (mNearestBeacon.major == 19175) {
+                var tester = $('<a href="page1.html"><p style="background:#00ff00" class="gameNotification animated slideInUp"><strong class = "gameText">Play a Trivia Game!</strong></p></a>');
+                var hScreen= $('<img src="images/mint.jpg" width="100%">');
+            } else if (mNearestBeacon.major == 18015) {
+                var tester = $('<a href="page2.html"><p style="background:#ffff00" class="gameNotification animated slideInUp"><strong class = "gameText">Watch the Beatles Play Live!</strong></p></a>');
+                var hScreen= $('<img src="images/ice.jpg" width="100%">');
+            } else if (mNearestBeacon.major == 50017) {
+                var tester = $('<a href="page3.html"><p style="background:#00ffff" class="gameNotification animated slideInUp"><strong class = "gameText">Take a photo as Kiss!</strong></p></a>');
+                var hScreen= $('<img src="images/blueberry.jpg" width="100%">');
+            } else {
+                var tester = $(' ');
+            }
 
-        $('#test').empty();
-
-        if (mNearestBeacon.major == 19175) {
-            var tester = $('<p style="background:#00ff00"><strong>Play a Trivia Game!</strong></p><a href="page1.html">Click Here</a>');
-        } else if (mNearestBeacon.major == 18015) {
-            var tester = $('<p style="background:#0000ff"><strong>Watch the Beatles play Live!</strong></p><a href="page2.html">Click Here</a>');
-        } else if (mNearestBeacon.major == 50017) {
-            var tester = $('<p style="background:#00ffff"><strong>Find out about the creator of this app!</strong></p><a href="page3.html">Click Here</a>');
-        } else {
-            var tester = $('<p style="background:#ff0000"><strong>Get in Range of a beacon yo!</strong></p>');
+            $('#test').append(tester);
+            $('#homeScreen').append(hScreen);
         }
-
-        $('#test').append(tester);
-
+        previousBeacon = mNearestBeacon.major;
 
     }
 

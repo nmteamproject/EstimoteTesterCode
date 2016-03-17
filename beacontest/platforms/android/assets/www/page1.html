@@ -7,18 +7,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no
 		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Cordova iBeacon</title>
+    <title>Plectra</title>
 
     <style>
         @import 'ui/css/evothings-app.css';
     </style>
-
-    <script>
-        // Redirect console.log to Evothings Workbench.
-        if (window.hyper && window.hyper.log) {
-            console.log = hyper.log
-        }
-    </script>
 
     <script src="cordova.js"></script>
     <script src="libs/jquery/jquery.js"></script>
@@ -130,9 +123,9 @@
 
 </head>
 
-    
-    
-    
+
+
+
 <body style="background:#91bfb4">
 
     <header>
@@ -144,24 +137,23 @@
 
     </header>
 
-<center>
-     <p>Now That's What I Call Triva! 37
-        <br />
-        Question <span id="NumberAsked">1</span> of 10<br>you've got <span id="NumberCorrect">0</span> answer(s) correct</p>
-    <p>
-        <strong><span id="TriviaQuestion">???</span></strong>
-    </p>
-    <p>
-        &nbsp;
-        <input id="RadioTrue" type="radio" value="true" name="answer" checked="checked" /> True
-        &nbsp;&nbsp;&nbsp;
-        <input id="RadioFalse" type="radio" value="false" name="answer" /> False
-    </p>
-    <p>
-        <input id="ButtonContinue" onclick="checkAnswer();" type="button" value="Submit" />
-    </p>
+    <center>
+        <p>Now That's What I Call Triva! 37
+            <br /> Question <span id="NumberAsked">1</span> of 10
+            <br>you've got <span id="NumberCorrect">0</span> answer(s) correct</p>
+        <p>
+            <strong><span id="TriviaQuestion">???</span></strong>
+        </p>
+        <p>
+            &nbsp;
+            <input id="RadioTrue" type="radio" value="true" name="answer" checked="checked" /> True &nbsp;&nbsp;&nbsp;
+            <input id="RadioFalse" type="radio" value="false" name="answer" /> False
+        </p>
+        <p>
+            <input id="ButtonContinue" onclick="checkAnswer();" type="button" value="Submit" />
+        </p>
 
-</center>
+    </center>
 </body>
 
 </html>

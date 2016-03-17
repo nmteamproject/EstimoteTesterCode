@@ -48,7 +48,6 @@
 .photoButton{
     position: absolute;
     z-index: 3;
-    padding-left: 40%;
 }
 
 input[type="button"] {
@@ -58,4 +57,13 @@ input[type="button"] {
 .hidden {
     color: red;
     opacity: 0;
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
 }

@@ -7,19 +7,12 @@
     <meta name="viewport" content="width=device-width, user-scalable=no
 		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Cordova iBeacon</title>
+    <title>Plectra</title>
 
     <style>
         @import 'ui/css/evothings-app.css';
-         @import 'ui/css/style.css';
+        @import 'ui/css/style.css';
     </style>
-
-    <script>
-        // Redirect console.log to Evothings Workbench.
-        if (window.hyper && window.hyper.log) {
-            console.log = hyper.log
-        }
-    </script>
 
     <script src="cordova.js"></script>
     <script src="libs/jquery/jquery.js"></script>
@@ -39,16 +32,25 @@
 
     </header>
     <center>
-        <button onclick="downOverlay()">&#8592;</button> <button id="cameraButton" onclick="getPicture()">Take Picture</button> <button onclick="upOverlay()">&#8594;</button>
-        <div class="photoButton">
-        <button onclick="smallerImage()">-</button>&nbsp;&nbsp;&nbsp;<button onclick="largerImage()">+</button>
-            </div>
-        <img src="" id="myImage"  width="100%" />
+        <button onclick="downOverlay()">&#8592;</button>
+        <button id="cameraButton" onclick="getPicture()">Take Picture</button>
+        <button onclick="upOverlay()">&#8594;</button>
+
+        <img src="" id="myImage" width="100%" />
         <img src="images/makeupoverlay1.png" id="myOverlay" width="100%">
 
-        
+
 
     </center>
+    <div class="photoButton">
+        <input type="range" name="points" id="points" value="50" min="10" max="100" oninput="changeX(this.value)" onchange="changeX(this.value)">
+
+        <input type="range" name="points" id="points" value="50" min="10" max="100" oninput="showVal(this.value)" onchange="showVal(this.value)">
+        <br>
+
+        <input type="range" name="points" id="points" value="50" min="10" max="100" oninput="changeY(this.value)" onchange="changeY(this.value)" orient="vertical">
+
+    </div>
     <script type="text/javascript">
         var overlayNumber = 1;
         var padLeft = 0;
@@ -69,43 +71,59 @@
                     destinationType: Camera.DestinationType.FILE_URI,
                     saveToPhotoAlbum: true
                 });
-             document.getElementById("cameraButton").innerHTML = "Retake";
+            document.getElementById("cameraButton").innerHTML = "Retake";
         }
 
         function editPicture() {
             var image = document.getElementById('myImage');
             image.src = "images/face.jpg";
         }
-        
-        function upOverlay(){
-            if(overlayNumber == 5){
+
+        function upOverlay() {
+            if (overlayNumber == 5) {
                 overlayNumber = 1;
-            }else{
-            overlayNumber++;
+            } else {
+                overlayNumber++;
             }
-            myOverlay.src = "images/makeupoverlay"+overlayNumber+".png"
+            myOverlay.src = "images/makeupoverlay" + overlayNumber + ".png"
         }
-        function downOverlay(){
-            if(overlayNumber == 1){
+
+        function downOverlay() {
+            if (overlayNumber == 1) {
                 overlayNumber = 5;
-            }else{
-            overlayNumber--;
+            } else {
+                overlayNumber--;
             }
-            myOverlay.src = "images/makeupoverlay"+overlayNumber+".png"
+            myOverlay.src = "images/makeupoverlay" + overlayNumber + ".png"
         }
-        function smallerImage(){
+
+        function showVal(nums) {
+
+            document.getElementById("myOverlay").width = nums * 5;
+        }
+
+        function changeY(nums) {
+            nums = nums * -1
+            document.getElementById("myOverlay").style.marginTop = nums + "px";
+        }
+
+        function changeX(nums) {
+            document.getElementById("myOverlay").style.marginLeft = nums + "px";
+        }
+
+        function smallerImage() {
             document.getElementById("myOverlay").width = document.getElementById("myOverlay").width - 10;
             padLeft = padLeft + 5;
-            document.getElementById("myOverlay").style.marginLeft = padLeft+"px";
-          //  document.getElementById("myOverlay").style.marginTop = padLeft+"px";
+            document.getElementById("myOverlay").style.marginLeft = padLeft + "px";
+            //  document.getElementById("myOverlay").style.marginTop = padLeft+"px";
         }
-        function largerImage(){
+
+        function largerImage() {
             document.getElementById("myOverlay").width = document.getElementById("myOverlay").width + 10;
             padLeft = padLeft - 5;
-            document.getElementById("myOverlay").style.marginLeft = padLeft+"px";
-           // document.getElementById("myOverlay").style.marginTop = padLeft+"px";
+            document.getElementById("myOverlay").style.marginLeft = padLeft + "px";
+            // document.getElementById("myOverlay").style.marginTop = padLeft+"px";
         }
-        
     </script>
 
 </body>

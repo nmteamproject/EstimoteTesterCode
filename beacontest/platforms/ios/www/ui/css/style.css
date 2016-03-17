@@ -36,9 +36,34 @@
     filter: FlipH;
 }
 
+.lead {
+    text-align: center;
+    font-size: 100%;
+}
+
+#login {
+    font-size: 125%
+}
 
 .photoButton{
     position: absolute;
     z-index: 3;
-    padding-left: 40%;
+}
+
+input[type="button"] {
+  padding: 10px;
+}
+
+.hidden {
+    color: red;
+    opacity: 0;
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
 }

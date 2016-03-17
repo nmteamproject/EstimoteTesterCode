@@ -3,10 +3,11 @@
 
 <head>
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, user-scalable=no
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no
 		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
+<<<<<<< HEAD
 	<title>Plectra</title>
 
 	<style>
@@ -19,20 +20,75 @@
 	<script src="libs/jquery/jquery.js"></script>
 	<script src="libs/evothings/evothings.js"></script>
 	<script src="app.js"></script>
+=======
+    <title>Plectra</title>
+
+    <style>
+        @import 'ui/css/evothings-app.css';
+        @import 'ui/css/animate.css';
+        @import 'ui/css/style.css';
+    </style>
+
+    <script src="cordova.js"></script>
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/evothings/evothings.js"></script>
+>>>>>>> e26a6b1fbc376cd16aaa6927d4bc7fa6c1cd78e3
 
 </head>
 
 <body>
 
-	<header>
-		<button class="back" onclick="history.back()">
-			<img src="ui/images/arrow-left.svg" />
-		</button>
+    <header>
+        <button class="back" onclick="history.back()">
+            <img src="ui/images/arrow-left.svg" />
+        </button>
 
+        <div>Plectra</div>
+
+    </header>
+
+    <ul id="homeScreen" class="dynamic">
+        <div style="margin: 0 0.9em 0 0.9em">
+            <p class="lead">Welcome to Plectra! </p>
+            <p class="lead">The wayfinding Rock Hall App.</p>
+            <br>
+            <p class="lead" id="login">Login</p>
+            <br>
+            <div style="text-align: center;">
+                <form>
+                    Username:
+                    <input id="username" type="text" name="username">
+                    <br>
+                    <br> Password:
+                    <input id="password" type="password" name="password">
+                    <br>
+                    <br>
+                </form>
+                <button id="submit" style="margin-top:15px" onclick="submit()">Submit</button>
+                <br>
+                <br>
+                <p class="hidden">Username/password cannot be blank.</p>
+            </div>
+
+
+<<<<<<< HEAD
 		<div>Plectra</div>
+=======
+        </div>
+    </ul>
+>>>>>>> e26a6b1fbc376cd16aaa6927d4bc7fa6c1cd78e3
 
-	</header>
+    <script type="text/javascript">
+        function submit() {
+            if (($('#username').val() == '') || ($('#password').val() == '')) {
+                $('.hidden').css('opacity', '1.0');
+            } else {
+                window.location.href = "welcome.html";
+            }
+        }
+    </script>
 
+<<<<<<< HEAD
     <ul id="homeScreen" class="dynamic"><div style="margin: 0 0.9em 0 0.9em">
         <p class="lead">Welcome to Plectra! </p>
         <p class="lead">The wayfinding Rock Hall App.</p>
@@ -67,8 +123,9 @@
         }
         
     </script>
+=======
+>>>>>>> e26a6b1fbc376cd16aaa6927d4bc7fa6c1cd78e3
 
-    
 </body>
 
 </html>

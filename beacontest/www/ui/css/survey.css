@@ -19,7 +19,6 @@ p {
     text-align: center;
     display: block;
     width: auto;
-    margin: 1%;
 }
 
 #quizzie {
@@ -55,10 +54,6 @@ p {
     text-align: center;
     margin: 0;
     margin-bottom: 2%;
-}
-
-#quizzie ul li.results-inner {
-    padding: 5% 2%;
 }
 
 #quizzie ul li.results-inner img {

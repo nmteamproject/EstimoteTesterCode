@@ -1,11 +1,12 @@
 var questions = [
-    "Welcome to Trivia","Name a color on the American Flag.",
+    "Welcome to Trivia",
+    "Name a color on the American Flag.",
     "Name a type of alcohol"
 ];
 
 
-var q1Answers = [{
-
+var q1Answers = [
+    {
         "points": "60",
         "keywords": ["red", "crimson", "scarlet"]
         },
@@ -19,8 +20,8 @@ var q1Answers = [{
         }
 ];
 
-var q2Answers = [{
-
+var q2Answers = [
+    {
         "points": "60",
         "keywords": ["Vodka", "Svedka", "Moonshine"]
         },
@@ -42,5 +43,3 @@ var q2Answers = [{
         "keywords": ["Tequila"]
         }
 ];
-
-var questions = ["Welcome to Trivia","Name a color on the American Flag.","Name a type of alcohol"];

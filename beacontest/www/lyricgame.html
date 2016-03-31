@@ -17,7 +17,7 @@
     <script src="lyrics.json"></script>
     <script src="cordova.js"></script>
     <script src="libs/jquery/jquery.js"></script>
-    <script src="libs/evothings/evothings.js"></script>
+    <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
 
     <script type="text/javascript">
         var lyricNumber = 1;
@@ -39,7 +39,7 @@
             var answerLyrics;
             for(i = 0; i < fullString.length; i++){
                 if (fullString[i].style.display != "none"){
-                    answerLyrics  = answerLyrics +" "+ fullString[i].value;
+                    answerLyrics  = answerLyrics +""+ fullString[i].value;
                 }
             }
             
@@ -80,6 +80,8 @@
         
         
         function loadWordBank(){
+            
+            Sortable.create(lyrics);
             
             document.getElementById("song").innerHTML = songs[lyricNumber].song;
             document.getElementById("artist").innerHTML = songs[lyricNumber].artist;

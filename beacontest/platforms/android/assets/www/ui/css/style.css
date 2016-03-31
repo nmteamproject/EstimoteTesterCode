@@ -22,6 +22,17 @@
     top:250px;
 }
 
+.lyric{
+    font-size: 20px;
+    background: white;
+    color: black;
+    border-radius: 0;
+    font-style: normal;
+    text-decoration: none;
+    padding: 9px;
+    
+}
+
 #myImage{
     position: absolute;
     z-index: 0;
@@ -48,10 +59,6 @@
 .photoButton{
     position: absolute;
     z-index: 3;
-<<<<<<< HEAD
-    padding-left: 40%;
-=======
->>>>>>> e26a6b1fbc376cd16aaa6927d4bc7fa6c1cd78e3
 }
 
 input[type="button"] {
@@ -61,8 +68,6 @@ input[type="button"] {
 .hidden {
     color: red;
     opacity: 0;
-<<<<<<< HEAD
-=======
 }
 
 input[type=range][orient=vertical]
@@ -72,5 +77,4 @@ input[type=range][orient=vertical]
     width: 8px;
     height: 175px;
     padding: 0 5px;
->>>>>>> e26a6b1fbc376cd16aaa6927d4bc7fa6c1cd78e3
 }

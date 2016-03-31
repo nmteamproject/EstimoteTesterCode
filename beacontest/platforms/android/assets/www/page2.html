@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background:#c6e2ff">
+<html>
 
 <head>
 
@@ -7,19 +7,58 @@
     <meta name="viewport" content="width=device-width, user-scalable=no
 		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Plectra</title>
+    <title>Rock This Way</title>
 
     <style>
         @import 'ui/css/evothings-app.css';
+        @import 'ui/css/animate.css';
+        @import 'ui/css/style.css';
     </style>
 
     <script src="cordova.js"></script>
     <script src="libs/jquery/jquery.js"></script>
     <script src="libs/evothings/evothings.js"></script>
-    <script src="app.js"></script>
+    <script src="trivia.json"></script>
+
+    <script type="text/javascript">
+        var questionNumber = 0;
+        window.onload = loadQuestion;
+        function submit() {
+            if ($('#answer').val() == '') {
+                $('.hidden').css('opacity', '1.0');
+            } else {
+                var matched = false;
+                var answer = $('#answer').val().toLowerCase();
+                console.log(answer);
+                var answerkey = eval('q'+questionNumber+'Answers');
+                for (var i = 0; i < answerkey.length; i++) {
+                    var obj = answerkey[i];
+                    for (var j = 0; j < obj.keywords.length; j++) {
+                        if (obj.keywords[j] == answer){
+                            document.getElementById('points').innerHTML = "You got "+obj.points+" points!";
+                            matched = true;
+                        }
+                    }
+                }
+                if (matched == false){
+                    document.getElementById('points').innerHTML = "Your answer didn't match any! =(";
+                }
+                questionNumber++;
+                loadQuestion();
+            }
+            document.getElementById('answer').value = "";
+        }
+
+        function loadQuestion(){
+            document.getElementById('question').innerHTML = questions[questionNumber];
+        }
+    </script>
 
 </head>
 
+    
+    
+    
 <body style="background:#c6e2ff">
 
     <header>
@@ -27,70 +66,21 @@
             <img src="ui/images/arrow-left.svg" />
         </button>
 
-        iPhone
+        Rock This Way
 
     </header>
 
 
-<<<<<<< HEAD
-    
-   <div style="margin: 0 0.9em 0 0.9em">
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-       <div id="player" style="margin-left:-27px"></div></div>
-=======
-    <div style="margin: 0 0.9em 0 0.9em">
-        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-        <div id="player" style="margin-left:-27px"></div>
-    </div>
->>>>>>> e26a6b1fbc376cd16aaa6927d4bc7fa6c1cd78e3
+    <div style="text-align: center; margin: 0 0.9em 0 0.9em">
+        <form>
+            <div id="question"></div>
+            <br> Answer:
+            <input id="answer" type="texts" name="answer">
+        </form>
+        <p class="hidden">Username/password cannot be blank.</p>
+        <button id="submit" style="margin-top:15px" onclick="submit()">Submit</button>
 
-    <script>
-        // 2. This code loads the IFrame Player API code asynchronously.
-        var tag = document.createElement('script');
-
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        // 3. This function creates an <iframe> (and YouTube player)
-        //    after the API code downloads.
-        var player;
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '390',
-                width: $(window).width(),
-                videoId: 'iS0wuN_6wyw',
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        // 4. The API will call this function when the video player is ready.
-        function onPlayerReady(event) {
-            event.target.playVideo();
-        }
-
-        // 5. The API calls this function when the player's state changes.
-        //    The function indicates that when playing a video (state=1),
-        //    the player should play for six seconds and then stop.
-        var done = false;
-
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.PLAYING && !done) {
-                setTimeout(stopVideo, 6000);
-                done = true;
-            }
-        }
-
-        function stopVideo() {
-            player.stopVideo();
-        }
-    </script>
-
-
+        <div id="points"></div>
 
 </body>
 

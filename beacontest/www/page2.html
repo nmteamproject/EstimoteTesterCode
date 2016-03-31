@@ -28,12 +28,13 @@
                 $('.hidden').css('opacity', '1.0');
             } else {
                 var matched = false;
+                var answer = $('#answer').val().toLowerCase();
+                console.log(answer);
                 var answerkey = eval('q'+questionNumber+'Answers');
-                console.log(answerkey);
                 for (var i = 0; i < answerkey.length; i++) {
                     var obj = answerkey[i];
                     for (var j = 0; j < obj.keywords.length; j++) {
-                        if (obj.keywords[j] == $('#answer').val()){
+                        if (obj.keywords[j] == answer){
                             document.getElementById('points').innerHTML = "You got "+obj.points+" points!";
                             matched = true;
                         }
@@ -42,12 +43,13 @@
                 if (matched == false){
                     document.getElementById('points').innerHTML = "Your answer didn't match any! =(";
                 }
+                questionNumber++;
                 loadQuestion();
             }
+            document.getElementById('answer').value = "";
         }
 
         function loadQuestion(){
-            questionNumber++;
             document.getElementById('question').innerHTML = questions[questionNumber];
         }
     </script>

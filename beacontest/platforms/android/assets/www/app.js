@@ -202,24 +202,7 @@ var app = (function () {
         if (!mNearestBeacon) {
             return;
         }
-        if (mNearestBeacon.major != previousBeacon) {
-            $('#test').empty();
-            $('#homeScreen').empty();
-            if (mNearestBeacon.major == 19175) {
-                var tester = $('<a href="page1.html"><p style="background:#00ff00" class="gameNotification animated slideInUp"><strong class = "gameText">Play a Trivia Game!</strong></p></a>');
-                var hScreen= $('<img src="images/mint.jpg" width="100%">');
-            } else if (mNearestBeacon.major == 18015) {
-                var tester = $('<a href="page2.html"><p style="background:#ffff00" class="gameNotification animated slideInUp"><strong class = "gameText">Watch the Beatles Play Live!</strong></p></a>');
-                var hScreen= $('<img src="images/ice.jpg" width="100%">');
-            } else if (mNearestBeacon.major == 50017) {
-                var tester = $('<a href="page3.html"><p style="background:#00ffff" class="gameNotification animated slideInUp"><strong class = "gameText">Take a photo as Kiss!</strong></p></a>');
-                var hScreen= $('<img src="images/blueberry.jpg" width="100%">');
-            } else {
-                var tester = $(' ');
-            }
 
-<<<<<<< HEAD
-=======
         // If the nearest beacon changes, the code on beacons.html will change to the following based on beacon.major
 
         if (mNearestBeacon.major != previousBeacon) {
@@ -227,18 +210,17 @@ var app = (function () {
             $('#homeScreen').empty();
             if (mNearestBeacon.major == 19175) {
                 var tester = $('<a href="page1.html"><p style="background:#00ff00" class="gameNotification animated slideInUp"><strong class = "gameText">Play a Trivia Game!</strong></p></a>');
-                var hScreen = $('<img src="images/mint.jpg" width="100%">');
+                var hScreen = $('<img src="images/map1.png" width="100%">');
             } else if (mNearestBeacon.major == 18015) {
-                var tester = $('<a href="page2.html"><p style="background:#ffff00" class="gameNotification animated slideInUp"><strong class = "gameText">Watch the Beatles Play Live!</strong></p></a>');
-                var hScreen = $('<img src="images/ice.jpg" width="100%">');
+                var tester = $('<a href="page2.html"><p style="background:#ffff00" class="gameNotification animated slideInUp"><strong class = "gameText">Play Battle of the Bands!</strong></p></a>');
+                var hScreen = $('<img src="images/map2.png" width="100%">');
             } else if (mNearestBeacon.major == 50017) {
-                var tester = $('<a href="page3.html"><p style="background:#00ffff" class="gameNotification animated slideInUp"><strong class = "gameText">Take a photo as Kiss!</strong></p></a>');
-                var hScreen = $('<img src="images/blueberry.jpg" width="100%">');
+                var tester = $('<a href="lyricgame.html"><p style="background:#00ffff" class="gameNotification animated slideInUp"><strong class = "gameText">Play Lyracle!</strong></p></a>');
+                var hScreen = $('<img src="images/map3.png" width="100%">');
             } else {
                 var tester = $(' ');
             }
 
->>>>>>> e26a6b1fbc376cd16aaa6927d4bc7fa6c1cd78e3
             $('#test').append(tester);
             $('#homeScreen').append(hScreen);
         }

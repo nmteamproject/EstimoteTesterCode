@@ -93,33 +93,42 @@
             questionsAsked = questionsAsked + 1;
         }
 
-        function processAnswer(myAnswer) {
-            if (TriviaData[currentQuestion][1] == myAnswer) {
+        function processAnswer(myAnswer)
+        {
+            if (TriviaData[currentQuestion][1] == myAnswer)
+            {
                 // answer correct
                 totalCorrect = totalCorrect + 1;
             }
         }
 
         // This function creates our two dimensional array
-        function createTwoDimensionalArray(arraySize) {
+        function createTwoDimensionalArray(arraySize)
+        {
             for (i = 0; i < TriviaData.length; ++i)
                 TriviaData[i] = new Array(arraySize);
         }
 
         // This function checks the answer, updates correct total
         // and randomly selects the next question
-        function checkAnswer() {
-            if (document.getElementById("RadioTrue").checked) {
+        function checkAnswer()
+        {
+            if (document.getElementById("RadioTrue").checked)
+            {
                 processAnswer("true");
-            } else {
+            } 
+            else
+            {
                 processAnswer("false");
             }
             // get next question if not asked all yet
-            if (questionsAsked < 10) {
+            if (questionsAsked < 10)
+            {
                 setQuestion();
             }
             // final question asked - disable button and show final results
-            else {
+            else
+            {
                 alert("Quiz complete! You got " + totalCorrect + " correct out of 10.");
                 document.getElementById("ButtonContinue").disabled = true;
             }

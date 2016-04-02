@@ -25,10 +25,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"LocalNotification\"><param name=\"ios-package\" onload=\"true\" value=\"APPLocalNotification\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
@@ -38,6 +34,10 @@
                         },
                         {
                             "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"LocalNotification\"><param name=\"ios-package\" onload=\"true\" value=\"APPLocalNotification\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -84,13 +84,13 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "de.appplant.cordova.plugin.local-notification": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
@@ -187,6 +187,14 @@
             ]
         },
         {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
+        },
+        {
             "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
             "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
             "pluginId": "de.appplant.cordova.plugin.local-notification",
@@ -211,14 +219,6 @@
             "merges": [
                 "cordova.plugins.notification.local.core",
                 "plugin.notification.local.core"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-            "id": "cordova-plugin-statusbar.statusbar",
-            "pluginId": "cordova-plugin-statusbar",
-            "clobbers": [
-                "window.StatusBar"
             ]
         }
     ]

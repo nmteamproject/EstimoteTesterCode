@@ -78,3 +78,8 @@ input[type=range][orient=vertical]
     height: 175px;
     padding: 0 5px;
 }
+
+#lyrics{
+    border-style: thick solid #000000;
+    min-height: 100px;
+}

@@ -24,48 +24,47 @@
         var swapCount = 0;
         var swapLyric;
         window.onload = loadWordBank;
-        
-        
-        function addLyric(clickedVal){
-            var lyric =  "<button class='lyric' onclick='swap(this)' value='"+clickedVal+"'>"+clickedVal+"</button>";
-           
-            
+
+
+        function addLyric(clickedVal) {
+            var lyric = "<button class='lyric' onclick='swap(this)' value='" + clickedVal + "'>" + clickedVal + "</button>";
+
+
             var currentLyrics = document.getElementById("lyrics").innerHTML;
-            document.getElementById("lyrics").innerHTML = currentLyrics+" "+lyric;
+            document.getElementById("lyrics").innerHTML = currentLyrics + "" + lyric;
         }
-        
-        function checkLyrics(){
+
+        function checkLyrics() {
             var fullString = document.getElementById("lyrics").querySelectorAll(".lyric");
             var answerLyrics;
-            for(i = 0; i < fullString.length; i++){
-                if (fullString[i].style.display != "none"){
-                    answerLyrics  = answerLyrics +""+ fullString[i].value;
+            for (i = 0; i < fullString.length; i++) {
+                if (fullString[i].style.display != "none") {
+                    answerLyrics = answerLyrics + " " + fullString[i].value;
                 }
             }
-            
-            var answer = answerLyrics.substr(10,answerLyrics.length);
+
+            var answer = answerLyrics.substr(10, answerLyrics.length);
             console.log(answer);
-            
-            if(answer == correctLyrics[lyricNumber]){
+
+            if (answer == correctLyrics[lyricNumber]) {
                 document.getElementById("wordBank").innerHTML = "You Got it Right!";
-            }else{
+            } else {
                 document.getElementById("lyrics").innerHTML = "That was incorrect! Try again =)"
                 loadWordBank();
             }
-            
-            
-            
+
+
+
         }
 
-        function swap(eventTarget){
+        function swap(eventTarget) {
             console.log("this is totally a function");
-            if (swapCount == 0){
+            if (swapCount == 0) {
                 eventTarget.style.background = "blue";
                 swapLyric = eventTarget;
                 swapCount++;
-                
-            }
-            else {
+
+            } else {
                 var saveAttribute = eventTarget.value;
                 var saveLyric = eventTarget.innerHTML;
                 eventTarget.innerHTML = swapLyric.innerHTML;
@@ -76,28 +75,47 @@
                 swapLyric.style.background = "white";
             }
         }
-        
-        
-        
-        function loadWordBank(){
-            
-            Sortable.create(lyrics);
-            
+
+
+
+        function loadWordBank() {
+            document.getElementById("lyrics").style.border = "medium solid #000000";
+            Sortable.create(lyrics, {
+                group: 'foo',
+                onStart: function (evt) {
+                   document.getElementById("lyrics").style.border = "medium dashed #000000";
+                },
+
+                // dragging ended
+                onEnd: function (evt) {
+                   document.getElementById("lyrics").style.border = "medium solid #000000";
+                },
+            });
+            Sortable.create(wordBank, {
+                group: 'foo',
+                onStart: function (evt) {
+                   document.getElementById("lyrics").style.border = "medium dashed #000000";
+                },
+
+                // dragging ended
+                onEnd: function (evt) {
+                   document.getElementById("lyrics").style.border = "medium solid #000000";
+                },
+            });
+
             document.getElementById("song").innerHTML = songs[lyricNumber].song;
             document.getElementById("artist").innerHTML = songs[lyricNumber].artist;
             document.getElementById("verse").innerHTML = songs[lyricNumber].verse;
-            
-            var bank = eval("lyricCollection"+lyricNumber);
+
+            var bank = eval("lyricCollection" + lyricNumber);
             var fullBank = "";
-            
-            for(i = 0; i < bank.length; i++){
-               fullBank += "<button class='lyric' onclick='this.style.display=&quot;none&quot;; [addLyric(this.value)];' value='"+bank[i]+"'>"+bank[i]+"</button> "
+
+            for (i = 0; i < bank.length; i++) {
+                fullBank += "<button class='lyric' onclick='this.style.display=&quot;none&quot;; [addLyric(this.value)];' value='" + bank[i] + "'>" + bank[i] + "</button> "
             }
-            
-                document.getElementById("wordBank").innerHTML = fullBank;
-            }
-        
-        
+
+            document.getElementById("wordBank").innerHTML = fullBank;
+        }
     </script>
 
 </head>
@@ -118,9 +136,12 @@
 
 
     <div style="text-align: center; margin: 0 0.9em 0 0.9em">
-        <div><p>
-            Song: <h4 id="song"></h4>
-            <br> Artist: <h3 id="artist"></h3>
+        <div>
+            <p>
+                Song:
+                <h4 id="song"></h4>
+                <br> Artist:
+                <h3 id="artist"></h3>
             </p>
         </div>
         <br>
@@ -128,17 +149,18 @@
             <p id="verse"></p>
         </div>
         <hr>
+    </div>
+    <center>
+    <div id="game">
         <div id="lyrics">
         </div>
+        <div id="wordBank" style="text-align: center; margin: 0 0.9em 0 0.9em">
+        </div>
     </div>
-    <hr>
-    <div id="wordBank" style="text-align: center; margin: 0 0.9em 0 0.9em">
-       
-    </div>
-<center>
-    <div>
-        <button onclick="checkLyrics()">Submit</button>
-    </div>
+    
+        <div>
+            <button onclick="checkLyrics()">Submit</button>
+        </div>
     </center>
 </body>
 

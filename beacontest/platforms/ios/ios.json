@@ -37,7 +37,11 @@
                             "count": 1
                         },
                         {
+<<<<<<< HEAD
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+=======
                             "xml": "<feature name=\"LocalNotification\"><param name=\"ios-package\" onload=\"true\" value=\"APPLocalNotification\" /><param name=\"onload\" value=\"true\" /></feature>",
+>>>>>>> 1a65934f6c7a8160651c688219ca3d810c53ef6c
                             "count": 1
                         }
                     ]
@@ -92,6 +96,9 @@
         },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
         }
     },
     "dependent_plugins": {},
@@ -220,6 +227,26 @@
                 "cordova.plugins.notification.local.core",
                 "plugin.notification.local.core"
             ]
+<<<<<<< HEAD
+        },
+        {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+            "id": "cordova-plugin-vibration.notification",
+            "pluginId": "cordova-plugin-vibration",
+            "merges": [
+                "navigator.notification",
+                "navigator"
+            ]
+=======
+>>>>>>> 1a65934f6c7a8160651c688219ca3d810c53ef6c
         }
     ]
 }

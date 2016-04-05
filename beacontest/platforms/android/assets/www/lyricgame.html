@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  style="background:#c6e2ff">
+<html style="background:#c6e2ff">
 
 <head>
 
@@ -17,7 +17,7 @@
     <script src="lyrics.js"></script>
     <script src="cordova.js"></script>
     <script src="libs/jquery/jquery.js"></script>
-    <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+    <script src="libs/sortable/Sortable.js"></script>
 
     <script type="text/javascript">
         var lyricNumber = 1;
@@ -78,31 +78,39 @@
 
 
 
+        function playMusic(song) {
+
+            var audio = new Audio('songs/'+song+'.mp3');
+            audio.play();
+
+        }
+
         function loadWordBank() {
             document.getElementById("lyrics").style.border = "medium solid #000000";
             Sortable.create(lyrics, {
                 group: 'foo',
                 onStart: function (evt) {
-                   document.getElementById("lyrics").style.border = "medium dashed #000000";
+                    document.getElementById("lyrics").style.border = "medium dashed #000000";
                 },
 
                 // dragging ended
                 onEnd: function (evt) {
-                   document.getElementById("lyrics").style.border = "medium solid #000000";
+                    document.getElementById("lyrics").style.border = "medium solid #000000";
                 },
             });
             Sortable.create(wordBank, {
                 group: 'foo',
                 onStart: function (evt) {
-                   document.getElementById("lyrics").style.border = "medium dashed #000000";
+                    document.getElementById("lyrics").style.border = "medium dashed #000000";
                 },
 
                 // dragging ended
                 onEnd: function (evt) {
-                   document.getElementById("lyrics").style.border = "medium solid #000000";
+                    document.getElementById("lyrics").style.border = "medium solid #000000";
                 },
             });
 
+            document.getElementById("playMusicButton").value = musicCollection[lyricNumber];
             document.getElementById("song").innerHTML = songs[lyricNumber].song;
             document.getElementById("artist").innerHTML = songs[lyricNumber].artist;
             document.getElementById("verse").innerHTML = songs[lyricNumber].verse;
@@ -130,7 +138,7 @@
             <img src="ui/images/arrow-left.svg" />
         </button>
 
-        <img src="images/logo.png" height="50px"/>
+        <img src="images/logo.png" height="50px" />
 
     </header>
 
@@ -143,7 +151,7 @@
                 <br> Artist:
                 <h3 id="artist"></h3>
             </p>
-            <button id="playMusicButton">&#9654;</button>
+            <button id="playMusicButton" onclick="playMusic(this.value)" value="">&#9654;</button>
         </div>
         <br>
         <div>
@@ -151,13 +159,13 @@
         </div>
     </div>
     <center>
-    <div id="game">
-        <div id="lyrics">
+        <div id="game">
+            <div id="lyrics">
+            </div>
+            <div id="wordBank" style="text-align: center; margin: 0 0.9em 0 0.9em">
+            </div>
         </div>
-        <div id="wordBank" style="text-align: center; margin: 0 0.9em 0 0.9em">
-        </div>
-    </div>
-    
+
         <div>
             <button onclick="checkLyrics()">Submit</button>
         </div>

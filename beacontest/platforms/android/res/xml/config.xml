@@ -20,6 +20,13 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
+<<<<<<< HEAD
+=======
+    <feature name="Vibration">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+    </feature>
+    <allow-intent href="market:*" />
+>>>>>>> 8889afbd21e11d565f22c1f7c38a685f204b737d
     <name>Rock This Way</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

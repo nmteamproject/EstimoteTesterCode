@@ -66,6 +66,8 @@
                 document.getElementById(prevQNum).style.color = "#888888"
             }
             var qNum = "crowdQ"+questionNumber;
+            document.getElementById(qNum).className += " animated";
+            document.getElementById(qNum).className += " bounceIn";
             document.getElementById(qNum).innerHTML = questions[questionNumber];
         }
     </script>
@@ -91,11 +93,15 @@
         <div id="question"></div>
         <br>
         <div id="points"></div>
-        <br> Answer:
+        <br> 
+        
+        
+        <div id="submissionForm">
+        Answer:
         <input id="answer" type="texts" name="answer">
         <button id="submit" style="margin-top:15px" onclick="submit()">Submit</button>
-
-        
+        </div>
+    </div>
 
 </body>
 

@@ -47,6 +47,9 @@
         <param name="onload" value="true" />
     </feature>
     <preference name="StatusBarOverlaysWebView" value="true" />
+    <feature name="Vibration">
+        <param name="ios-package" value="CDVVibration" />
+    </feature>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <name>Rock This Way</name>

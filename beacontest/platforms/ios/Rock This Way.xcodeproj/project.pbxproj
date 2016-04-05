@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C572AE91CC48919B3F78F7 /* AppDelegate+CDVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18232E4CFB6D42619748B1B3 /* AppDelegate+CDVLocationManager.m */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
@@ -34,6 +33,8 @@
 		E93E15BCF1F1427DAA2F32AF /* CDVPlugin+APPAppEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C5610EEFD446E7A2A9B756 /* CDVPlugin+APPAppEvent.m */; };
 		F6877E1F4C754CC7AFDC0B24 /* CDVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 421F272436EC4404B28C530A /* CDVLocationManager.m */; };
 		F991518405154D85BA3AB105 /* LMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2E5DC128A04CFF82B62716 /* LMLogger.m */; };
+		0AC57A3989704099A5710955 /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F721A8F9421CB7751B3B /* CDVVibration.m */; };
+		04495ABF6C734B59BC052221 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9E024672464D4DBBFB06D0 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,9 @@
 		F0B925BCF0D94AF688CB6890 /* UIApplication+APPLocalNotification.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+APPLocalNotification.m"; path = "de.appplant.cordova.plugin.local-notification/UIApplication+APPLocalNotification.m"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Rock This Way/config.xml"; sourceTree = "<group>"; };
 		FA53309BC6594B56817CAA73 /* APPAppEventDelegate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = APPAppEventDelegate.h; path = "cordova-plugin-app-event/APPAppEventDelegate.h"; sourceTree = "<group>"; };
+		E426F721A8F9421CB7751B3B /* CDVVibration.m */ = {isa = PBXFileReference; name = "CDVVibration.m"; path = "cordova-plugin-vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		0E07B56A098E4C108131E95B /* CDVVibration.h */ = {isa = PBXFileReference; name = "CDVVibration.h"; path = "cordova-plugin-vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		AB9E024672464D4DBBFB06D0 /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				E6A16A75E43A4E889CE817B7 /* CoreLocation.framework in Frameworks */,
 				228B25E430EA44969AF84FA0 /* ImageIO.framework in Frameworks */,
 				CAF06EEB7F2642589398B0EC /* AVFoundation.framework in Frameworks */,
+				04495ABF6C734B59BC052221 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +197,7 @@
 				7445593063644B5E8113D2B8 /* CoreLocation.framework */,
 				BB2BC02D765644BDB76EE270 /* ImageIO.framework */,
 				83A3B8134CA843E2BF333A31 /* AVFoundation.framework */,
+				AB9E024672464D4DBBFB06D0 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -247,6 +253,8 @@
 				14CDAB2EB193427CB4E1A9AC /* UILocalNotification+APPLocalNotification.h */,
 				06601E1DE40B4FE0BFDC0B8E /* CDVStatusBar.m */,
 				69489ED17FEE46FEAF34144A /* CDVStatusBar.h */,
+				E426F721A8F9421CB7751B3B /* CDVVibration.m */,
+				0E07B56A098E4C108131E95B /* CDVVibration.h */,
 			);
 			name = Plugins;
 			path = "Rock This Way/Plugins";
@@ -383,6 +391,7 @@
 				956A7C6AC8E84011AB449389 /* UIApplication+APPLocalNotification.m in Sources */,
 				78C2F321DC2F4F1C8CD3F012 /* UILocalNotification+APPLocalNotification.m in Sources */,
 				AC8F9CDE884E460BB1E6F345 /* CDVStatusBar.m in Sources */,
+				0AC57A3989704099A5710955 /* CDVVibration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,11 +18,12 @@
     <script src="cordova.js"></script>
     <script src="libs/jquery/jquery.js"></script>
     <script src="libs/evothings/evothings.js"></script>
-    <script src="trivia.json"></script>
+    <script src="crowdanswers.js"></script>
 
     <script type="text/javascript">
         var questionNumber = 0;
-        window.onload = loadQuestion;
+        window.onload = fillQuestions;
+
         function submit() {
             if ($('#answer').val() == '') {
                 $('.hidden').css('opacity', '1.0');
@@ -30,17 +31,17 @@
                 var matched = false;
                 var answer = $('#answer').val().toLowerCase();
                 console.log(answer);
-                var answerkey = eval('q'+questionNumber+'Answers');
+                var answerkey = eval('q' + questionNumber + 'Answers');
                 for (var i = 0; i < answerkey.length; i++) {
                     var obj = answerkey[i];
                     for (var j = 0; j < obj.keywords.length; j++) {
-                        if (obj.keywords[j] == answer){
-                            document.getElementById('points').innerHTML = "You got "+obj.points+" points!";
+                        if (obj.keywords[j] == answer) {
+                            document.getElementById('points').innerHTML = "You got " + obj.points + " points!";
                             matched = true;
                         }
                     }
                 }
-                if (matched == false){
+                if (matched == false) {
                     document.getElementById('points').innerHTML = "Your answer didn't match any! =(";
                 }
                 questionNumber++;
@@ -48,17 +49,32 @@
             }
             document.getElementById('answer').value = "";
         }
+        
+        
+        function fillQuestions(){
+            var questionList="";
+            for (var i = 0; i < questions.length; i++){
+                questionList += "<div class='crowdQuestion' id='crowdQ"+i+"'>-----------</div>";
+            }
+            document.getElementById('question').innerHTML = questionList;
+            loadQuestion();
+        }
 
-        function loadQuestion(){
-            document.getElementById('question').innerHTML = questions[questionNumber];
+        function loadQuestion() {
+            var prevQNum = "crowdQ"+(questionNumber-1);
+            if ((questionNumber - 1)>=0){
+                document.getElementById(prevQNum).style.color = "#888888"
+            }
+            var qNum = "crowdQ"+questionNumber;
+            document.getElementById(qNum).innerHTML = questions[questionNumber];
         }
     </script>
 
 </head>
 
-    
-    
-    
+
+
+
 <body style="background:#c6e2ff">
 
     <header>
@@ -66,21 +82,20 @@
             <img src="ui/images/arrow-left.svg" />
         </button>
 
-        Rock This Way
+        The Crowd
 
     </header>
 
 
     <div style="text-align: center; margin: 0 0.9em 0 0.9em">
-        <form>
-            <div id="question"></div>
-            <br> Answer:
-            <input id="answer" type="texts" name="answer">
-        </form>
-        <p class="hidden">Username/password cannot be blank.</p>
+        <div id="question"></div>
+        <br>
+        <div id="points"></div>
+        <br> Answer:
+        <input id="answer" type="texts" name="answer">
         <button id="submit" style="margin-top:15px" onclick="submit()">Submit</button>
 
-        <div id="points"></div>
+        
 
 </body>
 

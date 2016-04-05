@@ -83,3 +83,8 @@ input[type=range][orient=vertical]
     border-style: thick solid #000000;
     min-height: 100px;
 }
+
+.crowdQuestion{
+    width: 80vw;
+    border: thick solid #000000;
+}

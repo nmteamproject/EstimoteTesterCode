@@ -99,6 +99,15 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+        "id": "cordova-plugin-vibration.notification",
+        "pluginId": "cordova-plugin-vibration",
+        "merges": [
+            "navigator.notification",
+            "navigator"
+        ]
+    },
+    {
         "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
         "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
         "pluginId": "de.appplant.cordova.plugin.local-notification",
@@ -124,30 +133,19 @@ module.exports = [
             "cordova.plugins.notification.local.core",
             "plugin.notification.local.core"
         ]
-<<<<<<< HEAD
-    },
-    {
-        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-        "id": "cordova-plugin-statusbar.statusbar",
-        "pluginId": "cordova-plugin-statusbar",
-        "clobbers": [
-            "window.StatusBar"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-vibration/www/vibration.js",
-        "id": "cordova-plugin-vibration.notification",
-        "pluginId": "cordova-plugin-vibration",
-        "merges": [
-            "navigator.notification",
-            "navigator"
-        ]
-=======
->>>>>>> 1a65934f6c7a8160651c688219ca3d810c53ef6c
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
-{}
+{
+    "com.unarin.cordova.beacon": "3.3.1",
+    "cordova-plugin-app-event": "1.2.0",
+    "cordova-plugin-camera": "2.1.0",
+    "cordova-plugin-device": "1.1.1",
+    "cordova-plugin-statusbar": "2.1.2",
+    "cordova-plugin-vibration": "2.1.0",
+    "cordova-plugin-whitelist": "1.2.1",
+    "de.appplant.cordova.plugin.local-notification": "0.8.4"
+}
 // BOTTOM OF METADATA
 });

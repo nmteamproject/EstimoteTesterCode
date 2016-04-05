@@ -43,14 +43,12 @@
         <param name="onload" value="true" />
     </feature>
     <preference name="StatusBarOverlaysWebView" value="true" />
-<<<<<<< HEAD
     <feature name="Vibration">
         <param name="ios-package" value="CDVVibration" />
-=======
+    </feature>
     <feature name="LocalNotification">
         <param name="ios-package" onload="true" value="APPLocalNotification" />
         <param name="onload" value="true" />
->>>>>>> 1a65934f6c7a8160651c688219ca3d810c53ef6c
     </feature>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />

@@ -95,6 +95,7 @@ input[type=range][orient=vertical]
      border: thick solid #000000;
     border-radius: 40px;
     padding: 20px;
+    margin-right: -2px
 }
 
 #submissionForm{

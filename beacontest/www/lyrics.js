@@ -42,3 +42,8 @@ var lyricCollection1 = [
     "to",
     "stay"
 ];
+
+var musicCollection = [
+    "WorkFromHome",
+    "WorkFromHome"
+];

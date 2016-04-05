@@ -91,6 +91,14 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "id": "cordova-plugin-statusbar.statusbar",
+        "pluginId": "cordova-plugin-statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
+    },
+    {
         "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
         "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
         "pluginId": "de.appplant.cordova.plugin.local-notification",
@@ -116,6 +124,7 @@ module.exports = [
             "cordova.plugins.notification.local.core",
             "plugin.notification.local.core"
         ]
+<<<<<<< HEAD
     },
     {
         "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
@@ -133,6 +142,8 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
+=======
+>>>>>>> 1a65934f6c7a8160651c688219ca3d810c53ef6c
     }
 ];
 module.exports.metadata = 

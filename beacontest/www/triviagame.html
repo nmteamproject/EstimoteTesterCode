@@ -43,6 +43,10 @@
         TriviaData[8][0] = "The lead singer of fun. is Nate Ruess.";
         TriviaData[9][0] = "The Who is a British Band";
         TriviaData[10][0] = "Rochester is a bipoler city.";
+        TriviaData[11][0] = "Sharkrats are best rats.";
+        TriviaData[12][0] = "Female charr have fluffy-er tails.";
+        TriviaData[13][0] = "Japan has created a highly loved digital pop idol.";
+        TriviaData[14][0] = "Akira Yamaoka composed the music for all Silent Hill games.";
 
         // Answers
         TriviaData[0][1] = "false";
@@ -56,6 +60,10 @@
         TriviaData[8][1] = "true";
         TriviaData[9][1] = "true";
         TriviaData[10][1] = "true";
+        TriviaData[11][1] = "true";
+        TriviaData[12][1] = "true";
+        TriviaData[13][1] = "true";
+        TriviaData[14][1] = "false";
 
         // Has question been asked
         // -- necessary because we are asking in random order
@@ -70,9 +78,18 @@
         TriviaData[8][2] = "no";
         TriviaData[9][2] = "no";
         TriviaData[10][2] = "no";
+        TriviaData[11][2] = "no";
+        TriviaData[12][2] = "no";
+        TriviaData[13][2] = "no";
+        TriviaData[14][2] = "no";
 
         // Load up first question
         window.onload = setQuestion;
+        
+        var counting = setInterval(timerCountdown, 1000);
+                
+        //Sets up the timer.
+        var timeLeft = 30;
 
         // Sets question text and indicator so that we know the question has been displayed
         function setQuestion()
@@ -98,6 +115,7 @@
             {
                 // answer correct
                 totalCorrect = totalCorrect + 1;
+                timeLeft + 10;
             }
         }
 
@@ -135,6 +153,17 @@
             document.getElementById("NumberAsked").innerHTML = questionsAsked;
             document.getElementById("NumberCorrect").innerHTML = totalCorrect;
         }
+        
+        //The countdown timer, getting questions correct adds ten seconds.
+        function timerCountdown()
+        {
+            timeLeft--;
+            document.getElementById("TimerElement").innerHTML = timeLeft;
+            if(timeLeft = 0)
+            {
+                    alert("Out of time!");
+            }
+        }
     </script>
 
 </head>
@@ -156,7 +185,9 @@
     <center>
         <p>Now That's What I Call Triva! 37
             <br /> Question <span id="NumberAsked">1</span> of 10
-            <br>you've got <span id="NumberCorrect">0</span> answer(s) correct</p>
+            <br>you've got <span id="NumberCorrect">0</span> answer(s) correct
+            <br>Time Remaining <div id="TimerElement">?</div>
+        </p>
         <p>
             <strong><span id="TriviaQuestion">???</span></strong>
         </p>

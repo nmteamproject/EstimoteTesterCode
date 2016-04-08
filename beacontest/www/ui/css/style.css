@@ -14,39 +14,6 @@
     top: 25%;
 }
 
-#myOverlay{
-    align-content: center;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top:250px;
-}
-
-.lyric{
-    font-size: 20px;
-    background: white;
-    color: black;
-    border-radius: 0;
-    font-style: normal;
-    text-decoration: none;
-    padding: 9px;
-    
-}
-
-#myImage{
-    position: absolute;
-    z-index: 0;
-    left: 0;
-    top:200px;
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -ms-filter: "FlipH";
-    filter: FlipH;
-}
-
 .lead {
     text-align: center;
     font-size: 100%;
@@ -56,49 +23,268 @@
     font-size: 125%
 }
 
-.photoButton{
-    position: absolute;
-    z-index: 3;
-}
-
-input[type="button"] {
-  padding: 10px;
-}
 
 .hidden {
     color: red;
     opacity: 0;
 }
 
-input[type=range][orient=vertical]
-{
-    writing-mode: bt-lr; /* IE */
-    -webkit-appearance: slider-vertical; /* WebKit */
-    width: 8px;
-    height: 175px;
-    padding: 0 5px;
-}
+/*  ----------------------------------------------------------
+								Lyracle
+	---------------------------------------------------------- */
 
 #lyrics{
     border-style: thick solid #000000;
+    border-radius: 10px;
     min-height: 100px;
+    margin: 15px;
+    
 }
 
-.crowdQuestion{
-    width: 80vw;
-    border: thick solid #000000;
-    border-radius: 10px;
-    margin: 10px;
-}
 
 #playMusicButton{
-     border: thick solid #000000;
+    border: 2px solid #000000;
     border-radius: 40px;
     padding: 20px;
-    margin-right: -2px
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+.lyric{
+    border:thin solid;
+    font-size: 20px;
+    background: white;
+    color: black;
+    border-radius: 0;
+    font-style: normal;
+    text-decoration: none;
+    padding: 9px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+#songDetails{
+   width: 100%;
+}
+
+#artist{
+    display: inline;
+    float: right
+}
+
+#song{
+    display: inline;
+    float: left;
+}
+
+#verse{
+    text-align: center;
+}
+
+#sumbitLyricsButton{
+    display: block;
+    text-align: center;
+    postion: absolute;
+    margin-top: 100px;
+}
+
+.submitButton{
+    font-size: 20px;
+    background: none;
+    padding: 10px;
+    border-radius: 10px;
+    width:80%;
+    border: 1px solid;
+}
+
+#lyricRefresh{
+/*    display: inline-block;*/
+   position:absolute;
+    left: 20px;
+    margin-top: 40px;
+    background: none;
+    border: none;
+}
+
+/*  ----------------------------------------------------------
+								Against The Crowd
+	---------------------------------------------------------- */
 
 #submissionForm{
     position: absolute;
     bottom: 0px;
+    text-align: center;
+    
 }
+
+#answer{
+    width:85vw;
+    font-size: 30px;
+}
+
+.strike{
+    color:red;
+    font-size: 40px;
+    border: thick solid red;
+    display: inline;
+    margin: 10px;
+    padding: 5px;
+}
+
+
+.crowdQuestion{
+    width: 80vw;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+
+/*  ----------------------------------------------------------
+								Header
+	---------------------------------------------------------- */
+
+header {
+	box-sizing: border-box; /* Width & height includes padding & border. */
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	width: 100%;
+	height: 1.1em;
+
+	/* Left and right margins should correspond to body margins. */
+	margin: 0 0 3.45% 0;
+	/* Left padding should correspond to the back button's width. */
+	padding: 1% 2% 1% 2%;
+
+	font-size: 150%;
+	line-height: 100%;
+	text-align: center;
+	vertical-align: middle;
+
+	background: #767676;
+
+	z-index: 1000;
+}
+header button {
+	display: block;
+	position: absolute;
+	top: 50%;
+	max-height: 70%;
+
+	margin: 0;
+
+	font-size: 30%;
+
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+header button.back {
+	position: absolute;
+	/*left: 6.25%;*/
+	left: 0.9em;
+
+	width: 10%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+	/* Font size is percentage of the header's font size. */
+	font-size: 50%;
+	color: #000;
+
+	text-align: left;
+
+	background: none;
+
+	border-radius: 0;
+	border: none;
+
+	box-shadow: none;
+}
+header button.back img {
+	height: 0.5em;
+}
+header img.logotype {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+
+	height: 60%;
+
+	margin: 0 auto;
+
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  ----------------------------------------------------------
+								Common Styles
+	---------------------------------------------------------- */
+
+
+/* Common styles for Evothings examples and client. */
+
+@import '../fonts/ProximaNova.css';
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Proxima Nova Regular', sans-serif;
+	font-weight: normal;
+
+	background: rgb(255,255,255);
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+/*	margin: 0 0.9em 0 0.9em;*/
+	font-size: 150%;
+	font-size: 7.5vw;
+}
+
+/* Add a top margin to the content corresponding to the height of the header. */
+body::before {
+	display: block;
+	width: 100%;
+	height: 1.1em; /* Should correspond to header's height. */
+	margin-bottom: 0.4em;
+
+	content: '\0000a0'; /* Non-breaking space (&nbsp;) */
+	font-size: 180%; /* Same as the header's font size. */
+	line-height: 200%; /* Slighly more than the header's line-height. */
+}
+
+/* Add a bottom margin. */
+body::after {
+	display:block;
+	content: '';
+	height: 1em;
+}
+
+

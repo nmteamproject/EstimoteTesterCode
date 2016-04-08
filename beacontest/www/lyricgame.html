@@ -10,7 +10,8 @@
     <title>Rock This Way</title>
 
     <style>
-        @import 'ui/css/evothings-app.css';
+        /*        @import 'ui/css/evothings-app.css';*/
+        
         @import 'ui/css/animate.css';
         @import 'ui/css/style.css';
     </style>
@@ -80,7 +81,7 @@
 
         function playMusic(song) {
 
-            var audio = new Audio('songs/'+song+'.mp3');
+            var audio = new Audio('songs/' + song + '.mp3');
             audio.play();
 
         }
@@ -109,7 +110,7 @@
                     document.getElementById("lyrics").style.border = "medium solid #000000";
                 },
             });
-
+            document.getElementById("lyrics").innerHTML = ""
             document.getElementById("playMusicButton").value = musicCollection[lyricNumber];
             document.getElementById("song").innerHTML = songs[lyricNumber].song;
             document.getElementById("artist").innerHTML = songs[lyricNumber].artist;
@@ -143,33 +144,30 @@
     </header>
 
 
-    <div style="text-align: center; margin: 0 0.9em 0 0.9em">
-        <div>
-            <p>
-                Song:
-                <h4 id="song"></h4>
-                <br> Artist:
-                <h3 id="artist"></h3>
-            </p>
+    <div style="margin: 0 0.9em 0 0.9em">
+        <div id="songDetails">
+            <div id="song"></div>
+            <div id="artist"></div>
+        </div>
+        <center>
             <button id="playMusicButton" onclick="playMusic(this.value)" value="">&#9654;</button>
-        </div>
-        <br>
-        <div>
-            <p id="verse"></p>
-        </div>
+        </center>
+        <div id="verse"></div>
     </div>
     <center>
         <div id="game">
+            <button id="lyricRefresh" onclick="loadWordBank()">&#x21bb;</button>
             <div id="lyrics">
+
             </div>
             <div id="wordBank" style="text-align: center; margin: 0 0.9em 0 0.9em">
             </div>
         </div>
 
-        <div>
-            <button onclick="checkLyrics()">Submit</button>
-        </div>
     </center>
+    <div id="sumbitLyricsButton">
+        <button onclick="checkLyrics()" class="submitButton">Submit</button>
+    </div>
 </body>
 
 </html>

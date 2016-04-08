@@ -10,7 +10,8 @@
     <title>Rock This Way</title>
 
     <style>
-        @import 'ui/css/evothings-app.css';
+/*        @import 'ui/css/evothings-app.css';*/
+        @import 'ui/css/style.css';
     </style>
 
     <script src="cordova.js"></script>
@@ -160,7 +161,7 @@
             timeLeft--;
             document.getElementById("TimerElement").innerHTML = timeLeft;
             
-            if(timeLeft = 0)
+            if(timeLeft <= 0)
             {
                     alert("Out of time!");
             }
@@ -184,7 +185,7 @@
     </header>
 
     <center>
-        <p>Now That's What I Call Triva! 37
+        <p>Now That's What I Call Triva!
             <br /> Question <span id="NumberAsked">1</span> of 10
             <br>you've got <span id="NumberCorrect">0</span> answer(s) correct
             <br>Time Remaining <div id="TimerElement">?</div>
@@ -198,7 +199,7 @@
             <input id="RadioFalse" type="radio" value="false" name="answer" /> False
         </p>
         <p>
-            <input id="ButtonContinue" onclick="checkAnswer();" type="button" value="Submit" />
+            <input id="ButtonContinue" onclick="checkAnswer();" type="button" value="Submit" class="submitButton"/>
         </p>
 
     </center>

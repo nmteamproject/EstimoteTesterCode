@@ -23,35 +23,64 @@
     font-size: 125%
 }
 
-
 .hidden {
     color: red;
     opacity: 0;
+}
+
+
+/*  ----------------------------------------------------------
+                            Trivia Game
+	---------------------------------------------------------- */
+
+.TriviaQuestion {
+    background: white;
+    padding: 5px;
+    margin: 15px;
+    height: 150px;
+    width:90vw;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid;
+    position: absolute;
+}
+
+#triviaInput{
+    margin-top: 300px;
+    
+}
+
+.triviaAnswer{
+    width:90vw;
+    padding: 10px;
+    font-size: 20px;
+    margin: 4px;
 }
 
 /*  ----------------------------------------------------------
 								Lyracle
 	---------------------------------------------------------- */
 
-#lyrics{
+#lyrics {
     border-style: thick solid #000000;
     border-radius: 10px;
     min-height: 100px;
     margin: 15px;
-    
+    z-index: 10;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><text x="25%" y="55%" font-size="30" fill="#c1c1c1">Drag and Drop</text></svg>');
 }
 
-
-#playMusicButton{
+#playMusicButton {
     border: 2px solid #000000;
     border-radius: 40px;
-    padding: 20px;
+    padding: 10px 15px 10px 17px;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: 30px;
 }
 
-.lyric{
-    border:thin solid;
+.lyric {
+    border: thin solid;
     font-size: 20px;
     background: white;
     color: black;
@@ -61,69 +90,76 @@
     padding: 9px;
     margin: 3px;
     border-radius: 5px;
+    z-index: 10;
 }
 
-#songDetails{
-   width: 100%;
+#songDetails {
+    width: 100%;
 }
 
-#artist{
+#artist {
     display: inline;
     float: right
 }
 
-#song{
+#song {
     display: inline;
     float: left;
 }
 
-#verse{
+#verse {
     text-align: center;
 }
 
-#sumbitLyricsButton{
+#sumbitLyricsButton {
     display: block;
     text-align: center;
     postion: absolute;
     margin-top: 100px;
 }
 
-.submitButton{
+.submitButton {
     font-size: 20px;
     background: none;
     padding: 10px;
     border-radius: 10px;
-    width:80%;
+    width: 80%;
     border: 1px solid;
 }
 
-#lyricRefresh{
-/*    display: inline-block;*/
-   position:absolute;
+#lyricRefresh {
+    position: absolute;
     left: 20px;
     margin-top: 40px;
     background: none;
     border: none;
 }
 
+.directions {
+    text-align: center;
+    font-size: 15px;
+    color: #4d4d4d;
+}
+
+
 /*  ----------------------------------------------------------
 								Against The Crowd
 	---------------------------------------------------------- */
 
-#submissionForm{
+.submissionForm {
+    padding: 10px;
     position: absolute;
     bottom: 0px;
     text-align: center;
-    
 }
 
-#answer{
-    width:85vw;
+#answer {
+    width: 85vw;
     font-size: 30px;
 }
 
-.strike{
-    color:red;
+.strike {
+    color: red;
     font-size: 40px;
     border: thick solid red;
     display: inline;
@@ -131,14 +167,12 @@
     padding: 5px;
 }
 
-
-.crowdQuestion{
+.crowdQuestion {
     width: 80vw;
     border: 2px solid #000000;
     border-radius: 10px;
-    margin: 10px;
+    margin: 2px 10px 2px 10px;
 }
-
 
 
 /*  ----------------------------------------------------------
@@ -146,93 +180,89 @@
 	---------------------------------------------------------- */
 
 header {
-	box-sizing: border-box; /* Width & height includes padding & border. */
-
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-
-	width: 100%;
-	height: 1.1em;
-
-	/* Left and right margins should correspond to body margins. */
-	margin: 0 0 3.45% 0;
-	/* Left padding should correspond to the back button's width. */
-	padding: 1% 2% 1% 2%;
-
-	font-size: 150%;
-	line-height: 100%;
-	text-align: center;
-	vertical-align: middle;
-
-	background: #767676;
-
-	z-index: 1000;
+    box-sizing: border-box;
+    /* Width & height includes padding & border. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1.1em;
+    /* Left and right margins should correspond to body margins. */
+    margin: 0 0 3.45% 0;
+    /* Left padding should correspond to the back button's width. */
+    padding: 1% 2% 1% 2%;
+    font-size: 150%;
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    background: #767676;
+    z-index: 1000;
 }
+
 header button {
-	display: block;
-	position: absolute;
-	top: 50%;
-	max-height: 70%;
-
-	margin: 0;
-
-	font-size: 30%;
-
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+    display: block;
+    position: absolute;
+    top: 50%;
+    max-height: 70%;
+    margin: 0;
+    font-size: 30%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
+
 header button.back {
-	position: absolute;
-	/*left: 6.25%;*/
-	left: 0.9em;
-
-	width: 10%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-
-	/* Font size is percentage of the header's font size. */
-	font-size: 50%;
-	color: #000;
-
-	text-align: left;
-
-	background: none;
-
-	border-radius: 0;
-	border: none;
-
-	box-shadow: none;
+    position: absolute;
+    /*left: 6.25%;*/
+    left: 0.9em;
+    width: 10%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* Font size is percentage of the header's font size. */
+    font-size: 50%;
+    color: #000;
+    text-align: left;
+    background: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
 }
+
+header div.points {
+    position: absolute;
+    /*left: 6.25%;*/
+    right: 0.9em;
+    width: 20%;
+    height: 100%;
+    top: 5px;
+    padding: 0;
+    /* Font size is percentage of the header's font size. */
+    font-size: 50%;
+    color: #000;
+    text-align: right;
+    background: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
 header button.back img {
-	height: 0.5em;
+    height: 0.5em;
 }
+
 header img.logotype {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	right: 0;
-
-	height: 60%;
-
-	margin: 0 auto;
-
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 60%;
+    margin: 0 auto;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
-
-
-
-
-
-
-
-
-
 
 
 /*  ----------------------------------------------------------
@@ -243,48 +273,51 @@ header img.logotype {
 /* Common styles for Evothings examples and client. */
 
 @import '../fonts/ProximaNova.css';
-
-html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-
-	font-family: 'Proxima Nova Regular', sans-serif;
-	font-weight: normal;
-
-	background: rgb(255,255,255);
-
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-}
+html,
 body {
-/*	margin: 0 0.9em 0 0.9em;*/
-	font-size: 150%;
-	font-size: 7.5vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Proxima Nova Regular', sans-serif;
+    font-weight: normal;
+    background: rgb(255, 255, 255);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+body {
+    /*	margin: 0 0.9em 0 0.9em;*/
+    font-size: 150%;
+    font-size: 7.5vw;
+}
+
 
 /* Add a top margin to the content corresponding to the height of the header. */
-body::before {
-	display: block;
-	width: 100%;
-	height: 1.1em; /* Should correspond to header's height. */
-	margin-bottom: 0.4em;
 
-	content: '\0000a0'; /* Non-breaking space (&nbsp;) */
-	font-size: 180%; /* Same as the header's font size. */
-	line-height: 200%; /* Slighly more than the header's line-height. */
+body::before {
+    display: block;
+    width: 100%;
+    height: 1.1em;
+    /* Should correspond to header's height. */
+    margin-bottom: 0.4em;
+    content: '\0000a0';
+    /* Non-breaking space (&nbsp;) */
+    font-size: 180%;
+    /* Same as the header's font size. */
+    line-height: 200%;
+    /* Slighly more than the header's line-height. */
 }
+
 
 /* Add a bottom margin. */
+
 body::after {
-	display:block;
-	content: '';
-	height: 1em;
+    display: block;
+    content: '';
+    height: 1em;
 }
-
-

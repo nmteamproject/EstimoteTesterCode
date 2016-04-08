@@ -38,9 +38,10 @@
                     var obj = answerkey[i];
                     for (var j = 0; j < obj.keywords.length; j++) {
                         if (obj.keywords[j] == answer) {
-                            document.getElementById('points').innerHTML = "You got " + obj.points + " points!";
+                            document.getElementById('pointsAwarded').innerHTML = "You got " + obj.points + " points!";
                             matched = true;
-                            points += obj.points;
+                            points += parseInt(obj.points);
+                            document.getElementById('crowdPoints').innerHTML = points;
                             questionNumber++;
                             loadQuestion();
                         }
@@ -50,7 +51,7 @@
                     strikes++;
                     document.getElementById('strikes').innerHTML += "<div class='animated bounceIn strike'>X</div>";
                     if (strikes == 3) {
-                        document.getElementById('points').innerHTML = "You got 0 points!";
+                        document.getElementById('pointsAwarded').innerHTML = "You got 0 points!";
                         document.getElementById('strikes').innerHTML = "";
                         strikes = 0;
                         questionNumber++;
@@ -96,7 +97,9 @@
             <img src="ui/images/arrow-left.svg" />
         </button>
 
-        The Crowd
+         <img src="images/logo.png" height="50px" />
+        
+        <div class="points" id="crowdPoints">0</div>
 
     </header>
 
@@ -104,10 +107,10 @@
     <div style="text-align: center; margin: 0 0.9em 0 0.9em">
         <div id="question"></div>
         <br>
-        <div id="points"></div>
+        <div id="pointsAwarded"></div>
         <br>
 <center id="strikes"></center>
-        <div id="submissionForm">
+        <div class="submissionForm">
             <input id="answer" type="texts" name="answer" placeholder="Answer"><br>
             <button id="submit" class="submitButton" style="margin-top:15px; margin-bottom:15px" onclick="submit()">Submit</button>
         </div>

@@ -2,12 +2,12 @@ var songs = [
     {
         artist:"Don McLean",
         song:"American Pie",
-        verse:"Bye Bye Mrs. American Pie"
+        verse:"Bye Bye Mrs. American Pie..."
     },
     {
         artist:"The Beatles",
         song:"Yesterday",
-        verse:"Yesterday, all my troubles seemed so far away"
+        verse:"Yesterday, all my troubles seemed so far away..."
     }
 ]
 

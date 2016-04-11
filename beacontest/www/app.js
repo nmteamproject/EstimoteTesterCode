@@ -223,6 +223,7 @@ var app = (function () {
 
             $('#test').append(tester);
             $('#homeScreen').append(hScreen);
+            $("#myModal").modal();
         }
         previousBeacon = mNearestBeacon.major;
 

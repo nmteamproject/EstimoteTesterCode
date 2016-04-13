@@ -15,12 +15,35 @@
 }
 
 .lead {
-    text-align: center;
+    text-align: left;
+    padding-left: 3%;
     font-size: 100%;
+    color: white;
 }
 
-#login {
-    font-size: 125%
+.plan {
+    color: #807F82;
+    padding-left: 3%;
+    padding-right: 15%;
+}
+
+.arrow {
+     position: absolute;
+    /*left: 6.25%;*/
+    right: 8.5em;
+    top: 6.8em;
+    width: 10%;
+    height: 7%;
+    margin: 0;
+    padding: 0;
+    /* Font size is percentage of the header's font size. */
+    font-size: 50%;
+    color: #000;
+    text-align: left;
+    background: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
 }
 
 .hidden {
@@ -202,13 +225,15 @@ header {
     /* Left and right margins should correspond to body margins. */
     margin: 0 0 3.45% 0;
     /* Left padding should correspond to the back button's width. */
-    padding: 1% 2% 1% 2%;
+    padding: 2% 2% 2% 2%;
     font-size: 150%;
     line-height: 100%;
     text-align: center;
     vertical-align: middle;
-    background: #767676;
+    background: #1D1A22;
     z-index: 1000;
+    border-bottom: 1px solid;
+    border-bottom-color: #302D32;
 }
 
 header button {
@@ -291,7 +316,7 @@ body {
     padding: 0;
     font-family: 'Proxima Nova Regular', sans-serif;
     font-weight: normal;
-    background: rgb(255, 255, 255);
+    background: #1D1A22;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

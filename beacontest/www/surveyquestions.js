@@ -14,214 +14,214 @@ var questions = [
 
 var q0Answers = [
     {
-        "points": "1",
+        "points": "0",
         "answer": "Under 18 years old"
     },
     {
-        "points": "1",
+        "points": "0",
         "answer": "19-35 years old"
     },
     {
-        "points": "1",
+        "points": "0",
         "answer": "36-60 years old"
     },
     {
-        "points": "1",
+        "points": "0",
         "answer": "61 years or older"
     }
 ];
 
 var q1Answers = [
     {
-        "points": "60",
+        "points": "0",
         "answer": "Yes"
     },
     {
-        "points": "25",
+        "points": "0",
         "answer": "No"
     }
 ];
 
 var q2Answers = [
     {
-        "points": "60",
+        "points": "0",
         "answer": "> 1 hour"
     },
     {
-        "points": "25",
+        "points": "0",
         "answer": "About an hour"
     },
     {
-        "points": "15",
+        "points": "0",
         "answer": "2 hours"
     },
     {
-        "points": "15",
+        "points": "0",
         "answer": "3 hours or more"
     }
 ];
 
 var q3Answers = [
     {
-        "points": "60",
+        "points": "1",
         "answer": "Rock"
     },
     {
-        "points": "25",
+        "points": "2",
         "answer": "Pop"
     },
     {
-        "points": "15",
+        "points": "2",
         "answer": "Hip-hop"
     },
     {
-        "points": "15",
+        "points": "3",
         "answer": "Country"
     },
     {
-        "points": "15",
+        "points": "4",
         "answer": "Other"
     }
 ];
 
 var q4Answers = [
     {
-        "points": "60",
+        "points": "3",
         "answer": "50s"
     },
     {
-        "points": "25",
+        "points": "3",
         "answer": "60s"
     },
     {
-        "points": "15",
+        "points": "1",
         "answer": "70s"
     },
     {
-        "points": "15",
+        "points": "1",
         "answer": "80s"
     },
     {
-        "points": "15",
+        "points": "2",
         "answer": "90s"
     },
     {
-        "points": "15",
+        "points": "4",
         "answer": "00s"
     }
 ];
 
 var q5Answers = [
     {
-        "points": "60",
+        "points": "1",
         "answer": "\"Jump\" by Van Halen"
     },
     {
-        "points": "25",
+        "points": "2",
         "answer": "\"Like a Virgin\" by Madonna"
     },
     {
-        "points": "15",
+        "points": "2",
         "answer": "\"Hotline Bling\" by Drake"
     },
     {
-        "points": "15",
+        "points": "4",
         "answer": "\"Ring of Fire\" by Johnny Cash"
     }
 ];
 
 var q6Answers = [
     {
-        "points": "60",
+        "points": "1",
         "answer": "Aerosmith"
     },
     {
-        "points": "25",
+        "points": "2",
         "answer": "Beyoncé"
     },
     {
-        "points": "15",
+        "points": "4",
         "answer": "Nirvana"
     },
     {
-        "points": "15",
+        "points": "1",
         "answer": "Green Day"
     },
     {
-        "points": "15",
+        "points": "2",
         "answer": "Kanye West"
     }
 ];
 
 var q7Answers = [
     {
-        "points": "60",
+        "points": "1",
         "answer": "Guitar"
     },
     {
-        "points": "25",
+        "points": "1",
         "answer": "Bass"
     },
     {
-        "points": "15",
+        "points": "1",
         "answer": "Drums"
     },
     {
-        "points": "15",
+        "points": "4",
         "answer": "Piano"
     },
     {
-        "points": "15",
+        "points": "2",
         "answer": "Synthesizer"
     },
 ];
 
 var q8Answers = [
     {
-        "points": "60",
+        "points": "0",
         "answer": "Blue"
     },
     {
-        "points": "25",
+        "points": "0",
         "answer": "Red"
     },
     {
-        "points": "15",
+        "points": "0",
         "answer": "Green"
     },
     {
-        "points": "15",
+        "points": "0",
         "answer": "Yellow"
     },
     {
-        "points": "15",
+        "points": "0",
         "answer": "Pink"
     },
     {
-        "points": "15",
+        "points": "0",
         "answer": "Other"
     }
 ];
 
 var q9Answers = [
     {
-        "points": "60",
+        "points": "4",
         "answer": "Kurt Cobain's Guitar"
     },
     {
-        "points": "25",
+        "points": "2",
         "answer": "Michael Jackson's Glove"
     },
     {
-        "points": "15",
+        "points": "3",
         "answer": "Taylor Swift's Lyric Sheets"
     },
     {
-        "points": "15",
+        "points": "1",
         "answer": "John Lennon's Jacket"
     },
     {
-        "points": "15",
+        "points": "1",
         "answer": "Elvis Presley's Custom Motorcycle"
     }
 ];

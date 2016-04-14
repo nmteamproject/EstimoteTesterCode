@@ -207,22 +207,34 @@ var app = (function () {
 
         if (mNearestBeacon.major != previousBeacon) {
             $('#test').empty();
-            $('#homeScreen').empty();
+            
+            $('#modalTitle').empty();
+            $('#modalDescription').empty();
             if (mNearestBeacon.major == 19175) {
+                $('#modalTitle').text("PLay Who Wants to be a Rockstar?");
+                var title = $('Who Wants to be a Rockstar?');
                 var tester = $('<a href="triviagame.html"><p style="background:#00ff00" class="gameNotification animated slideInUp"><strong class = "gameText">Play a Trivia Game!</strong></p></a>');
                 var hScreen = $('<img src="images/map1.png" width="100%">');
             } else if (mNearestBeacon.major == 18015) {
+                $('#modalTitle').text("Play Against the Crowd");
+                $("#modalPlay").attr("onclick","playGame(3)");
+                var title = $('Against The Crowd');
                 var tester = $('<a href="againstthecrowd.html"><p style="background:#ffff00" class="gameNotification animated slideInUp"><strong class = "gameText">Play Battle of the Bands!</strong></p></a>');
                 var hScreen = $('<img src="images/map2.png" width="100%">');
             } else if (mNearestBeacon.major == 50017) {
+                $("#modalPlay").attr("onclick","playGame(1)");
+                $('#modalTitle').text("Play Lyracle");
+                var title = $('Lyracle');
                 var tester = $('<a href="lyricgame.html"><p style="background:#00ffff" class="gameNotification animated slideInUp"><strong class = "gameText">Play Lyracle!</strong></p></a>');
                 var hScreen = $('<img src="images/map3.png" width="100%">');
             } else {
                 var tester = $(' ');
             }
 
-            $('#test').append(tester);
-            $('#homeScreen').append(hScreen);
+            
+           // $('#modalTitle').append(title);
+            //$('#modalDescription').append(tester);
+            //$('#homeScreen').append(hScreen);
             $("#myModal").modal();
         }
         previousBeacon = mNearestBeacon.major;
@@ -275,9 +287,24 @@ var app = (function () {
         var d = new Date();
         return format(d.getHours(), d.getMinutes(), d.getSeconds());
     }
-
+    
+    
     return app;
 
 })();
+
+function playGame(game){
+    if(game==1){
+        window.location.href = "lyricgame.html";
+    }
+    if(game==2){
+        window.location.href = "triviagame.html";
+    }
+    if (game == 3){
+        window.location.href = "againstthecrowd.html";
+    }
+}
+ 
+
 
 app.initialize();

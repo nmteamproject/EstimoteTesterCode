@@ -23,9 +23,19 @@
     <script src="libs/bootstrap/bootstrap.min.js"></script>
 
     <script>
+        var notificationID = 0;
         function triggerModal() {
             $("#myModal").modal()
         }
+        
+        function giveAlert(){
+        cordova.plugins.notification.local.schedule({
+                id: ++notificationID,
+                title: "title"
+            });
+    }
+
+        
     </script>
 
 </head>
@@ -49,8 +59,12 @@
 
 
     <ul id="test" class="dynamic"></ul>
-    <button onclick="triggerModal()">click for modal</button>
+<!--
 
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+-->
 
 
 
@@ -62,14 +76,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Play Lyracle</h4>
+                    <h4 class="modal-title" id="modalTitle">Play Lyracle</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="modalDescription">
                     <p>Play a game where you get a clip of a song, then you have to put the rest of the lyrics in order!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Play</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="modalPlay" onclick="playGame(1)">Play</button>
                 </div>
             </div>
 

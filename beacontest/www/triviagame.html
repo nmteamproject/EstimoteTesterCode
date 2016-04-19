@@ -106,7 +106,7 @@
             if (TriviaData[currentQuestion][1] == myAnswer) {
                 // answer correct
                 totalCorrect = totalCorrect + 1;
-                timeLeft + 10;
+                timeLeft += 10;
                 progress[(questionsAsked - 1)] = "&#9745;";
                 trackProgress();
             } else {
@@ -114,15 +114,15 @@
                 trackProgress();
             }
             removeQuestion();
-            if (questionsAsked < 15) {
+            if (questionsAsked < 11) {
                 
                 setQuestion();
             }
             // final question asked - disable button and show final results
-            else {
+            if(questionsAsked == 11) {
                 alert("Quiz complete! You got " + totalCorrect + " correct out of 10.");
-//                document.getElementById("ButtonContinue").disabled = true;
-            }
+                //document.getElementById("ButtonContinue").disabled = true;
+            } 
 
         }
 
